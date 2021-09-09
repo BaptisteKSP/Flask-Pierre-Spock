@@ -1,15 +1,15 @@
 import random
 
-tab = []
-for x in range(44):
+tab = [] 
+for x in range(44): #remplissage du tableau avec des valeurs nulles
     tab.append(0)
 
 tab[1] = 2
 tab[2] = 2
 tab[3] = 1
 tab[4] = 1
-tab[10] = 1
-tab[12] = 2
+tab[10] = 1 # le "1" du nombre "10" correspond au chiffre choisis par le joueur et le "0" correpond au chiffre du bot
+tab[12] = 2 # le résultat permet de savoir si le joueur à gagné ou non. "1" = win; "2" = lose
 tab[13] = 1
 tab[14] = 1
 tab[20] = 1
@@ -35,8 +35,8 @@ def Begin(nombreJoueur):
     return Result(nombreJoueur, nombreBot)
 
 def Result(nombreJ, nombreB):
-    nb = int(f"{nombreJ}{nombreB}")
-    if(tab[nb] == 1):
+    nb = int(f"{nombreJ}{nombreB}") #j'assemble les 2 chiffres pour faire un nombre
+    if(tab[nb] == 1): #nb en parametre permet de trouver le nombre 1 ou 2 qui va nous permettre de définir si le joueur à gagné.
         return({0 : "Le joueur a gagné"})
     else:
         return({1 : "Vous avez perdu contre le bot :'("})
