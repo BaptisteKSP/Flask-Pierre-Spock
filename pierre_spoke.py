@@ -26,10 +26,9 @@ tab[42] = 1
 tab[43] = 2
 
 def Begin(nombreJoueur):
-    nombreJoueur = int(nombreJoueur)
-    if(nombreJoueur < 0 or nombreJoueur > 4 or type(nombreJoueur) != int):
+    if(nombreJoueur < 0 or nombreJoueur > 4):
         return({0 : "Le nombre donné est incorrect"})
-
+    nombreJoueur = int(nombreJoueur)
     #attaque = {0:"Pierre", 1:"Papier", 2:"Ciseaux", 3:"Lezard", 4:"Spock"}
     nombreBot = random.choice([elem for elem in range(5) if elem != nombreJoueur])
     return Result(nombreJoueur, nombreBot)

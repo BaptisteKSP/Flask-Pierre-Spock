@@ -25,8 +25,11 @@ class Square(Resource):
 @api.doc(params={"x": "Must be an integer"}, location="query")
 class Spock(Resource):
     def get(self):
-        x = int(request.args.get('x', 0))
-        result = pierre_spoke.Begin(x)
+        if(request.args.get('x', 0).isnumeric()):
+            x = int(request.args.get('x', 0))
+            result = pierre_spoke.Begin(x)
+        else:
+            return({0 : "Ce n'est pas un nombre"})
         return result
 
 
